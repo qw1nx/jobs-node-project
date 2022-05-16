@@ -10,22 +10,22 @@ const port = process.env.PORT;
 start();
 
 async function start(){
-    const app = express();
+    const server = express();
 
 
-    expressConfig(app);
-    await databaseConfig(app)
-    routesConfig(app);
-    app.get('/', (req, res) =>{
+    expressConfig(server);
+    await databaseConfig(server)
+    routesConfig(server);
+    server.get('/', (req, res) =>{
 
         console.log(req.session);
         res.render('home', { layout: false});
     });
 
-    app.get('*', (req, res) => {
+    server.get('*', (req, res) => {
         res.render('404');
     });
 
-    app.listen(port, ()=>console.log("Server running on port ", port));
-    module.exports = app;
+    server.listen(port, ()=>console.log("Server running on port ", port));
+    module.exports = server;
 }
