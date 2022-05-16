@@ -4,7 +4,7 @@ const express = require('express');
 const databaseConfig = require('./config/database');
 const expressConfig = require('./config/express');
 const routesConfig = require('./config/routes')
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 
 start();
