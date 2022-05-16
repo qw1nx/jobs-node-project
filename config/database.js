@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('../models/User');
+require('../models/user');
 require('../models/Post');
 
 //TODO change database name
